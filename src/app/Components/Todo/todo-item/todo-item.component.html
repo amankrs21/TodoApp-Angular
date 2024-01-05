@@ -1,0 +1,21 @@
+<div class="container">
+  <h4 [ngClass]="{ strike: !todo.active }">
+    {{ todo.title }}
+    <small class="text-body-secondary">
+      ({{ todo.active ? "Active" : "Inactive" }})
+    </small>
+  </h4>
+  <p [ngClass]="{ strike: !todo.active }">{{ todo.desc }}</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      (click)="onCheckboxClick()"
+    >
+      {{ todo.active ? "Active" : "Inactive" }}
+    </button>
+    <button type="button" class="btn btn-outline-danger" (click)="deleteTodo()">
+      Delete
+    </button>
+  </div>
+</div>
